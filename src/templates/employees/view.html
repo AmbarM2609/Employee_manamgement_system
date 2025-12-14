@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ employee.name }}</h1>
+<p>Email: {{ employee.email }}</p>
+<p>Phone: {{ employee.phone }}</p>
+<p>Department: {{ employee.department }}</p>
+<p>Designation: {{ employee.designation }}</p>
+<p>Status: {{ employee.status }}</p>
+<a href="{{ url_for('employee.list_employees') }}">Back</a>
+{% endblock %}

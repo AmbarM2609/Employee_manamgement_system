@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>{{ "Edit Employee" if employee else "Add Employee" }}</h1>
+
+{% if errors %}
+  <div class="error-message">
+    <ul>
+      {% for error in errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+<form method="post">
+    <input name="name" placeholder="Name" value="{{ employee.name if employee }}" required>
+  <input name="email" placeholder="Email" value="{{ employee.email if employee }}" required>
+  <input name="phone" placeholder="Phone" value="{{ employee.phone if employee }}">
+  <input name="department" placeholder="Department" value="{{ employee.department if employee }}">
+  <input name="designation" placeholder="Designation" value="{{ employee.designation if employee }}">
+    
+  <div>
+    <button type="submit">Save Employee</button>
+
+    {% if employee %}
+      <a href="{{ url_for('employee.view_employee', employee_id=employee.id) }}" class="btn-secondary">Cancel</a>
+    {% else %}
+      <a href="{{ url_for('employee.list_employees') }}" class="btn-secondary">Cancel</a>
+    {% endif %}
+  </div>
+</form>
+
+{% endblock %}

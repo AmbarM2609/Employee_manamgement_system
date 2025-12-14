@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v=2) }}">
+    <title>EMS</title>
+</head>
+<body>
+    <div class="container">
+        {% if session.admin_id %}
+            <div style="text-align: right; margin-bottom: 10px;">
+                <a href="{{ url_for('auth.logout') }}">Logout</a> 
+            </div>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

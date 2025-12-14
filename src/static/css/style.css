@@ -1,0 +1,168 @@
+/* NEO-BRUTALIST EARTHY STYLES: Minimalist & Flat Buttons */
+
+/* --- RESET & TYPOGRAPHY --- */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f1e6; /* Warm light earthy tone */
+    color: #4a403a;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* --- HEADINGS --- */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    border-bottom: 3px solid #a67c52; /* Earthy clay border */
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+    color: #5c4b3f;
+    letter-spacing: 0.5px;
+}
+
+h2, h3 {
+    font-weight: 700;
+    color: #5c4b3f;
+}
+
+/* --- LINKS --- */
+a {
+    color: #8c6239;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: #ffffff;
+    background: #8c6239;
+    padding: 2px 4px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+/* --- CONTAINER / CARD --- */
+.container {
+    max-width: 650px;
+    margin: 80px auto;
+    padding: 40px;
+    background: #fdf6ef;
+    border: 3px solid #c69c6d;
+    box-shadow: 6px 6px 0 #c69c6d;
+}
+
+/* --- FORM ELEMENTS --- */
+input, textarea, select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 2px solid #c69c6d;
+    background: #fff9f0;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #4a403a;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #d4a373;
+    box-shadow: 4px 4px 0 #c69c6d;
+    background-color: #fff4e6;
+}
+
+/* --- BUTTONS (FLAT, EARTHY) --- */
+button {
+    border: none; /* No box/border */
+    background: none; /* Flat style *//* Earthy primary */
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 8px 12px;
+    position: relative;
+    transition: all 0.1s ease;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #d4a373; /* subtle underline shadow */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.2s ease;
+}
+
+button:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Delete Button */
+button.delete {
+    color: #c97c5d;
+}
+
+button.delete::after {
+    background: #c97c5d;
+}
+
+/* Secondary Buttons (Cancel, View, Edit) */
+.btn-secondary {
+    color: #a67c52;
+}
+
+.btn-secondary::after {
+    background: #a67c52;
+}
+
+/* --- LISTS --- */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    border: 2px solid #c69c6d;
+    padding: 18px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff9f0;
+    box-shadow: 4px 4px 0 #c69c6d;
+    color: #4a403a;
+}
+
+li > span {
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+li > div {
+    display: flex;
+    gap: 12px;
+}
+
+/* --- ERROR & MESSAGES --- */
+.error-message {
+    border: 3px solid #d97c6d;
+    background: #ffe6e0;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #6a3f34;
+}
+
+.success-message {
+    border: 3px solid #c69c6d;
+    background: #fff9f0;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #4a403a;
+}
