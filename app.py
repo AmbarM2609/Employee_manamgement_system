@@ -33,7 +33,7 @@ def create_initial_admin(app):
             print("--- Initial admin created: username='admin', password='admin123' ---")
 
 
-app = create_app()
+app = create_app() 
 
 if __name__ == "__main__":
     create_initial_admin(app) # <--- Call the function here
