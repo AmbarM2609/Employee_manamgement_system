@@ -32,8 +32,9 @@ def create_initial_admin(app):
             db.session.commit()
             print("--- Initial admin created: username='admin', password='admin123' ---")
 
+
+app = create_app()
+
 if __name__ == "__main__":
-    
-    app = create_app()
     create_initial_admin(app) # <--- Call the function here
     app.run(debug=True)
