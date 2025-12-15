@@ -16,22 +16,23 @@ load_dotenv()
 def create_initial_admin(app):
     with app.app_context():
         # 1. READ HASHED PASSWORD FROM RENDER SECRET
-        initial_admin = os.environ.get('INITIAL_ADMIN_PLAINTEXT_PASSWORD')
+        initial_password = os.environ.get('INITIAL_ADMIN_PLAINTEXT_PASSWORD')
         
         # Check if the table is empty AND the hash variable exists
-        if initial_admin and not Admin.query.first():
+        if initial_password and not Admin.query.first():
             
             # 2. CREATE ADMIN USING THE HASHED SECRET
+            # 2. CREATE ADMIN 
             print("--- Running Initial Admin Creation ---")
             
-            admin = Admin(
-                username="admin", 
-                password=initial_admin # Assuming this is the field name
-            )
+            admin = Admin(username="admin") 
+            
+            # 3. CRITICAL: HASH THE PASSWORD BEFORE SAVING!
+            admin.set_password(initial_password) 
             
             db.session.add(admin)
             db.session.commit()
-            print("--- Initial admin created securely. Delete the hash from Render NOW. ---")
+            print("--- Initial admin created securely. Delete the PLAINTEXT secret from Render NOW. ---")
 
 
 def create_app():
